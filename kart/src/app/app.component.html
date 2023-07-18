@@ -1,0 +1,31 @@
+<div class="main">
+  <!-- Aşağıdaki gibi amelelik yapmak gerine ngFor kullanarak aynı işlemi yaptık. ngFor foreach gibi çalışır. -->
+  <app-card 
+    *ngFor="let kart of kartlar"
+    [title]="kart.title"
+    [imageURL]="kart.imageURL"  
+    [username]="kart.username"
+    [content]="kart.content"
+  ></app-card>
+
+  <!--
+    <app-card
+    [title]="kartlar[0].title"
+    [imageURL]="kartlar[0].imageURL"
+    [username]="kartlar[0].username"
+    [content]="kartlar[0].content"
+  ></app-card>
+  <app-card
+    [title]="kartlar[1].title"
+    [imageURL]="kartlar[1].imageURL"
+    [username]="kartlar[1].username"
+    [content]="kartlar[1].content"
+  ></app-card>
+  <app-card
+    [title]="kartlar[2].title"
+    [imageURL]="kartlar[2].imageURL"
+    [username]="kartlar[2].username"
+    [content]="kartlar[2].content"
+  ></app-card>
+  -->
+</div>
