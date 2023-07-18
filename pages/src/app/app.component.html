@@ -1,0 +1,37 @@
+<div class="container">
+  <nav>
+    <ul class="pagination paginationUI">
+      <li class="page-item" [ngClass]="{ disabled: currentPage === 0 }">
+        <a (click)="currentPage = currentPage - 1" class="page-link" href="#"
+          >Previous</a
+        >
+      </li>
+      <ng-container *ngFor="let image of images; let i = index">
+        <li
+        class="page-item"
+        [ngClass]="{ active: i === currentPage }"
+        *ngIf="PageIndex(i)"
+      >
+        <!--<a (click)="changePage(i)" class="page-link">{{ i + 1 }}</a> 
+        .ts'te fonksiyon tanımlamadan sayfa değiştirmek için currentPage = i yapsak da olur-->
+        <a (click)="currentPage = i" class="page-link" href="#">{{ i + 1 }}</a>
+      </li>
+      </ng-container>
+          
+      
+      <li
+        class="page-item"
+        [ngClass]="{ disabled: currentPage === images.length - 1 }"
+      >
+        <a (click)="currentPage = currentPage + 1" class="page-link" href="#"
+          >Next</a
+        >
+      </li>
+    </ul>
+  </nav>
+
+  <div class="mainIMG">
+    <h4>{{ images[currentPage].title }}</h4>
+    <img class="IMG" [src]="images[currentPage].URL" />
+  </div>
+</div>
